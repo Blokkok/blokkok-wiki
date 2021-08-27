@@ -35,45 +35,56 @@
     </script>
   </head>
   <body>
-    <header class="mdc-top-app-bar">
+    <header class="mdc-top-app-bar app-bar" id="app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
           <span class="mdc-top-app-bar__title">Blokkok Wiki</span>
-        </section>
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="sb" aria-label="Search">search</button>
         </section>
       </div>
     </header>
 
-    <main class="mdc-top-app-bar--fixed-adjust">
-      <aside class="mdc-drawer">
-        <div class="mdc-drawer__content">
-          <nav class="mdc-list">
-            {% for page in site.pages %}
-              <a class="mdc-list-item mdc-list-item--activated" href="{{ page.url }}" aria-current="page">
-                <span class="mdc-list-item__ripple"></span>
-                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{{ page.icon }}</i>
-                <span class="mdc-list-item__text">{{ page.title }}</span>
-              </a>
-            {% endfor %}
-          </nav>
+    <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust">
+      <div class="mdc-drawer__header">
+        <h3 class="mdc-drawer__title">Blokkok Wiki</h3>
+        <h6 class="mdc-drawer__subtitle">{{ page.title }}</h6>
+      </div>
+      <div class="mdc-drawer__content">
+        <div class="mdc-list">
+          {% for page in site.pages %}
+            <a class="mdc-list-item mdc-list-item--activated" href="{{ page.url }}" aria-current="page">
+              <span class="mdc-list-item__ripple"></span>
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{{ page.icon }}</i>
+              <span class="mdc-list-item__text">{{ page.title }}</span>
+            </a>
+          {% endfor %}
         </div>
-      </aside>
-
-      {{ content }}
-    </main>
+      </div>
+    </aside>
+  
+    <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+      <main class="main-content" id="main-content">
+        {{ content }}
+      </main>
+    </div>
 
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
-    <script>
+    <script type="module">
       const TweMoji = twemoji;
 
       TweMoji.parse(document.body);
 
       // Material Stuff
 
-      const list = MDCList.attachTo(document.querySelector('.mdc-list'));
+      const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+
+      const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+      topAppBar.setScrollTarget(document.getElementById('main-content'));
+      topAppBar.listen('MDCTopAppBar:nav', () => {
+        drawer.open = !drawer.open;
+      });
+
+      const list = mdc.list.MDCList.attachTo(document.querySelector('.mdc-list'));
       list.wrapFocus = true;
 
       mdc.ripple.MDCRipple.attachTo(document.querySelector('#sb'));
