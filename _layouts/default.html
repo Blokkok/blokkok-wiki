@@ -5,7 +5,30 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="name"        content="Blokkok &bull; {{ page.title }}">
+    <meta name="description" content="{{ content }}">
+    <meta name="keywords"    content="blokkok, blocks, block, blokk, blok, openblocks, wiki, {{ page.title }}">
+    <meta name="theme-color" content="#00aa58">
+
+    <meta property="og:title"       content="Blokkok &bull; {{ page.title }}">
+    <meta property="og:url"         content="https://wiki.blokkok.ga">
+    <meta property="og:description" content="{{ content }}">
+
     <title>Blokkok Wiki &bull; {{ page.title }}</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="icon" href="https://blokkok.ga/img/favicon.png">
+
+    <script async src="https://arc.io/widget.min.js#9aZ6St8Q"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLHE9301B9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TLHE9301B9');
+    </script>
   </head>
   <body>
     {{ content }}
