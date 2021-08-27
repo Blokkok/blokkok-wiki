@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <script       src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script async src="https://arc.io/widget.min.js#9aZ6St8Q"></script>
@@ -50,14 +50,30 @@
         <h6 class="mdc-drawer__subtitle">{{ page.title }}</h6>
       </div>
       <div class="mdc-drawer__content">
-        <div class="mdc-list">
-          {% for page in site.pages %}
-            <a class="mdc-list-item mdc-list-item--activated" href="{{ page.url }}" aria-current="page">
+        <div class="mdc-list-group">
+          <div class="mdc-list">
+            <a class="mdc-list-item {% if(page.title == 'Home') %}mdc-list-item--activated{% endif %}" href="/" aria-current="page">
               <span class="mdc-list-item__ripple"></span>
-              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{{ page.icon }}</i>
-              <span class="mdc-list-item__text">{{ page.title }}</span>
+              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+              <span class="mdc-list-item__text">Home</span>
             </a>
-          {% endfor %}
+          </div>
+
+          <div role="separator" class="mdc-list-divider"></div>
+
+          <h3 class="mdc-list-group__subheader">Pages</h3>
+
+          <div class="mdc-list">
+            {% for pageL in site.pages %}
+              {% if(pageL.title != 'Home') %}
+                <a class="mdc-list-item {% if(pageL.title == page.title) %}mdc-list-item--activated{% endif %}" href="{{ pageL.url }}" aria-current="page">
+                  <span class="mdc-list-item__ripple"></span>
+                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{{ pageL.icon }}</i>
+                  <span class="mdc-list-item__text">{{ pageL.title }}</span>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       </div>
     </aside>

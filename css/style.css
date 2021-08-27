@@ -41,3 +41,12 @@ img.emoji {
 .mdc-top-app-bar {
   z-index: 7;
 }
+
+.mdc-list-item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.mdc-list-item__text {
+  margin-left: 16px;
+}
