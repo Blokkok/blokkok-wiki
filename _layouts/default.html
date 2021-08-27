@@ -35,7 +35,7 @@
     </script>
   </head>
   <body>
-    <header class="mdc-top-app-bar app-bar" id="app-bar">
+    <header class="mdc-top-app-bar app-bar mdc-top-app-bar--fixed" id="app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
@@ -65,7 +65,7 @@
 
           <div class="mdc-list">
             {% for pageL in site.pages %}
-              {% if(pageL.title != 'Home') %}
+              {% if(pageL.title != 'Home' || pageL.url != '/assets/css/style.css') %}
                 <a class="mdc-list-item {% if(pageL.title == page.title) %}mdc-list-item--activated{% endif %}" href="{{ pageL.url }}" aria-current="page">
                   <span class="mdc-list-item__ripple"></span>
                   <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{{ pageL.icon }}</i>
@@ -99,6 +99,8 @@
       topAppBar.listen('MDCTopAppBar:nav', () => {
         drawer.open = !drawer.open;
       });
+
+      drawer.open = true;
 
       const list = mdc.list.MDCList.attachTo(document.querySelector('.mdc-list'));
       list.wrapFocus = true;
