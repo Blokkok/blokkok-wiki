@@ -2,6 +2,11 @@
 
 /* STYLE */
 
+:root {
+  --mdc-theme-primary: #00aa58;
+  --mdc-theme-secondary: #bf0455;
+}
+
 * {
   padding: 0;
   margin: 0;
