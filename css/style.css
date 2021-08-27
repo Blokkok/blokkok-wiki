@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /* STYLE */
 
@@ -66,6 +67,12 @@ pre {
   padding: 8px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.06);
+
+  font-family: monospace;
+}
+
+code > *, code {
+  font-family: 'Robot Mono', monospace;
 }
 
 img.emoji {
