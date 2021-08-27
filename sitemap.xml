@@ -1,25 +1,19 @@
-<!-- sitemap here -->
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://wiki.blokkok.ga/</loc>
-    <lastmod>2021-08-27T13:46:21+00:00</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://wiki.blokkok.ga/blokkok-modsys/how-the-module-system-works.html</loc>
-    <lastmod>2021-08-27T13:46:21+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://wiki.blokkok.ga/blokkok-modsys/</loc>
-    <lastmod>2021-08-27T13:46:21+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://wiki.blokkok.ga/license.html</loc>
-    <lastmod>2021-08-27T13:46:21+00:00</lastmod>
     <priority>0.80</priority>
   </url>
 </urlset>
