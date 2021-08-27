@@ -39,16 +39,29 @@
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
-          <span class="mdc-top-app-bar__title">Page title</span>
+          <span class="mdc-top-app-bar__title">Blokkok Wiki</span>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
-          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
-          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="sb" aria-label="Search">search</button>
         </section>
       </div>
     </header>
+
     <main class="mdc-top-app-bar--fixed-adjust">
+      <aside class="mdc-drawer">
+        <div class="mdc-drawer__content">
+          <nav class="mdc-list">
+            {% for page in site.pages %}
+              <a class="mdc-list-item mdc-list-item--activated" href="{{ page.url }}" aria-current="page">
+                <span class="mdc-list-item__ripple"></span>
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{{ page.icon }}</i>
+                <span class="mdc-list-item__text">{{ page.title }}</span>
+              </a>
+            {% endfor %}
+          </nav>
+        </div>
+      </aside>
+
       {{ content }}
     </main>
 
@@ -57,6 +70,13 @@
       const TweMoji = twemoji;
 
       TweMoji.parse(document.body);
+
+      // Material Stuff
+
+      const list = MDCList.attachTo(document.querySelector('.mdc-list'));
+      list.wrapFocus = true;
+
+      mdc.ripple.MDCRipple.attachTo(document.querySelector('#sb'));
     </script>
   </body>
 </html>
