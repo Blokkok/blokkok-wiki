@@ -29,6 +29,7 @@ img.emoji {
 }
 
 .main-content {
+  padding: 8px;
   overflow: auto;
   height: 100%;
 }
