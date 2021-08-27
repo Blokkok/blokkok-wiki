@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="name"        content="Blokkok Wiki &bull; {{ page.title }}">
-    <meta name="description" content="{{ page.excerpt }}">
+    <meta name="description" content="{{ content | strip_html }}">
     <meta name="keywords"    content="blokkok, blocks, block, blokk, blok, openblocks, wiki, {{ page.title }}">
     <meta name="theme-color" content="#00aa58">
 
     <meta property="og:title"       content="Blokkok Wiki &bull; {{ page.title }}">
     <meta property="og:url"         content="https://wiki.blokkok.ga">
-    <meta property="og:description" content="{{ page.excerpt }}">
+    <meta property="og:description" content="{{ content | strip_html}}">
 
     <title>Blokkok Wiki &bull; {{ page.title }}</title>
 
