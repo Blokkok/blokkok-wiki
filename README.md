@@ -1,2 +1,3 @@
-# blokkok-wiki
+# Blokkok Wiki
+
 Wiki for Blokkok.

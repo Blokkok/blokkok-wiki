@@ -1,13 +1,15 @@
 ---
-title: How the module system works
-icon: extension
-layout: default
+title: How does Blokkok ModSys work?
+description: How the module system works is very simple, all it does is load a compiled dexed jar using `DexClassLoader` and invoke functions on it.
 ---
 
+> ⚠ OUTDATED ⚠
+
 ## How it's loaded
+
 How the module system works is very simple, all it does is load a compiled dexed jar using `DexClassLoader` and invoke functions on it.
 
-https://github.com/Blokkok/blokkok-modsys/blob/main/module-system/src/main/java/com/blokkok/modsys/ModuleLoader.kt#L70-L85
+<https://github.com/Blokkok/blokkok-modsys/blob/main/module-system/src/main/java/com/blokkok/modsys/ModuleLoader.kt#L70-L85>
 
 ## Module principle
 A module is a part of the app, it can do **whatever** the app can do. This allowance can make modules to be able to extend literally anything, do anything they want, and extend features without knowing much how the module bridge API works. Though, this comes with a security risk, since modules can do whatever they wanted, they can also do malicious stuff, that's why we recommend only using open-source modules, because we can inspect and audit their code to check if there is anything malicious in it.

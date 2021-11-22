@@ -1,8 +1,11 @@
 ---
 title: Blokkok ModSys
-icon: extension
-layout: default
+description: Welcome to the blokkok-modsys wiki, here, you can find explanations on how the module system library works and how to create your own module.
 ---
+
+# Blokkok ModSys
+
+> ⚠ OUTDATED ⚠
 
 Welcome to the blokkok-modsys wiki, here, you can find explanations on how the module system library works and how to create your own module.
 
