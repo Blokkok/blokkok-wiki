@@ -3,13 +3,19 @@ copyright: Copyright &copy; 2021 Blokkok
 site_url: https://wiki.blokkok.ga
 
 extra_css:
-  - stylesheets/extra.css
+  - extra.css
 
 extra_javascript:
   - https://arc.io/widget.min.js#9aZ6St8Q
 
 markdown_extensions:
   - meta
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 repo_url: https://github.com/Blokkok/blokkok
 repo_name: Blokkok/blokkok
@@ -31,7 +37,6 @@ theme:
         icon: material/weather-sunny
         name: Switch to dark mode
     - scheme: slate
-
       toggle:
         icon: material/weather-night
         name: Switch to light mode
